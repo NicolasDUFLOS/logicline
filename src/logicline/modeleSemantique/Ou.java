@@ -21,8 +21,8 @@ public class Ou extends Formule {
 	@Override
 	public Set<String> variablesLibres() {
 		HashSet<String> res= new HashSet<String>();
-		res.add(this.left.toString());
-		res.add(this.right.toString());
+		res.addAll(this.left.variablesLibres());
+		res.addAll(this.right.variablesLibres());
 		return res;
 	}
 

@@ -19,7 +19,7 @@ public class Non extends Formule {
 	@Override
 	public Set<String> variablesLibres() {
 		HashSet<String> res= new HashSet<String>();
-		res.add(this.formule.toString());
+		res.addAll(this.formule.variablesLibres());
 		return res;
 	}
 
