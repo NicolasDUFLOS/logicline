@@ -15,8 +15,8 @@ public class Variable extends Formule {
 		return "("+this.var + ")";
 	}
 
-	public Set variablesLibres() {
-		HashSet res= new HashSet();
+	public Set<String> variablesLibres() {
+		HashSet<String> res= new HashSet<String>();
 		res.add(this.var);
 		return res;
 	}
