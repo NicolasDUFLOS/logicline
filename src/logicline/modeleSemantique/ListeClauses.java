@@ -45,7 +45,7 @@ public class ListeClauses {
     public Substitution dpll() throws NotSatisfiableException
     {
         //À compléter
-        return null
+        return null;
     }
 
     private List<Clause> clauses;
