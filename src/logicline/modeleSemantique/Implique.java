@@ -28,7 +28,7 @@ public class Implique extends Formule {
 
 	@Override
 	public Formule substitue(Substitution s) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
