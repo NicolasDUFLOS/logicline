@@ -28,8 +28,7 @@ public class Equivalence extends Formule {
 
 	@Override
 	public Formule substitue(Substitution s) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Equivalence(left.substitue(s), right.substitue(s));
 	}
 
 	@Override
@@ -37,5 +36,15 @@ public class Equivalence extends Formule {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	@Override
+	public Formule supprImplications() {
+		return new Et(new Ou(new Non(left.supprImplications()),
+				right.supprImplications()), new Ou(left.supprImplications(),
+				new Non(right.supprImplications())));
+	}
+	
+	public boolean contientEt(){
+		return left.contientEt() || right.contientEt();
+	}
 }

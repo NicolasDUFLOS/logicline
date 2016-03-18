@@ -28,8 +28,7 @@ public class Ou extends Formule {
 
 	@Override
 	public Formule substitue(Substitution s) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Ou(left.substitue(s), right.substitue(s));
 	}
 
 	@Override
@@ -37,5 +36,20 @@ public class Ou extends Formule {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public Formule supprImplications(){
+		return new Ou(left.supprImplications(), right.supprImplications());
+	}
+	
+	public Formule negation(){
+		return new Et(left.negation(), right.negation());
+	}
 
+	public Formule entrerNegations(){
+		return new Ou(left.entrerNegations(), right.entrerNegations());
+	}
+	
+	public boolean contientEt(){
+		return left.contientEt() || right.contientEt();
+	}
 }

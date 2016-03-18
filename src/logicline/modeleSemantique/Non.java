@@ -25,14 +25,29 @@ public class Non extends Formule {
 
 	@Override
 	public Formule substitue(Substitution s) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Non(formule.substitue(s));
 	}
 
 	@Override
 	public boolean valeur() throws VariableLibreException {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public Formule supprImplications(){
+		return new Non(formule.supprImplications());
+	}
+	
+	public Formule negation(){
+		return formule.entrerNegations();
+	}
+	
+	public Formule entrerNegations(){
+		return formule.negation();
+	}
+	
+	public boolean contientEt(){
+		return formule.contientEt();
 	}
 
 }

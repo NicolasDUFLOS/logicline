@@ -22,9 +22,11 @@ public class Variable extends Formule {
 	}
 
 	public Formule substitue(Substitution s) {
-		if (s.get(var) != null) 
-			return s.get(var);
-		else return this;
+		Formule f = s.get(toString());
+		if ((f == null))
+			return this;
+		else
+			return f;
 	}
 	
 

@@ -28,8 +28,7 @@ public class Implique extends Formule {
 
 	@Override
 	public Formule substitue(Substitution s) {
-		
-		return null;
+		return new Implique(left.substitue(s), right.substitue(s));
 	}
 
 	@Override
@@ -37,5 +36,12 @@ public class Implique extends Formule {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	public Formule supprImplications(){
+		return new Ou(new Non(left.supprImplications()), right.supprImplications());
+	}
+	
+	public boolean contientEt(){
+		return left.contientEt() || right.contientEt();
+	}
 }
